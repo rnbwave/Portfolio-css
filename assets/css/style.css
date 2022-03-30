@@ -7,24 +7,26 @@
 
 body > header {
     background: rgb(54, 54, 54);
-    height: 100px;
+    display: flex;
+    justify-content: space-between;
 }    
 
 h1 {
     background: rgb(130, 234, 241);
     color: rgb(54, 54, 54);
-    position: absolute;
-    top: 15px;
-    width: fit-content;
-    padding-left: 40px;
-    padding-right: 10px;
+    display: flex;
+    justify-content: flex-start;
     font-size: 60px;
+    padding-left: 60px;
+    padding-right: 10px;
+    margin: 20px 0px;
 }
 
-header nav {
-    position: absolute;
-    top: 50px;
-    right: 80px;
+header > nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 120px;
 }
 
 header a {
@@ -32,12 +34,13 @@ header a {
     text-decoration: none;
     color: rgb(130, 234, 241);
     padding: 8px;
+    margin: 30px 0 10px 10px;
 }
 
 body > figure {
-    background: rgb(74, 100, 185);
-    height: 200px;
-    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 h3 {
@@ -46,46 +49,56 @@ h3 {
     position: absolute;
     top: 220px;
     padding: 5px;
-    width: fit-content;
-    right: 80px;
     font-size: 40px;
+    margin-right: 120px;
+}
+
+main {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 60px;
+    margin-right: 80px;
 }
 
 section {
     display: flex;
+    width: 100%;
     margin-top: 20px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 20px;
     color: rgb(74, 100, 185);
 }
 
 h2 {
-    width: 20%;
-    border-right: 3px solid;
-    padding-right: 10px;
-    font-size: 50px;
     text-align: right;
-    margin-right: 40px;
+    width: 200px;
+    font-size: 50px;
+    border-right: 3px solid;
+    padding-right: 20px;
+    margin: 10px 30px 0px 0px;
 }
 
 .img, article {
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 980px;
+    margin: 10px 30px 0px 0px;
 }
 
-figure {
-    margin: 3px 0 3px 0;
+.img > figure {
+    margin-top: 6px;
 }
 
 .card1 {
     display: inline-block;
     position: relative;
-    width: 100%;
-    height: 300px;
+    height: 306px;
     border: 3px rgb(130, 234, 241) solid;
-    color: black;
+    color: rgb(54, 54, 54);
 }
 
-img {
+.card1 img, .card2 img {
     filter: brightness(70%);
 }
 
@@ -93,10 +106,9 @@ img:hover {
     filter: brightness(100%);
 }
 
-figure header {
+.card1 header, .card2 header {
     position: absolute;
     bottom: 10px;
-    width: fit-content;
     background: rgb(130, 234, 241);
     padding: 3px;
 }
@@ -104,17 +116,17 @@ figure header {
 .card2 {
     display: inline-block;
     position: relative;
-    width: 49.5%;
-    height: 100px;
+    height: 106px;
     border: 3px rgb(130, 234, 241) solid;
-    color: black;
+    color: rgb(54, 54, 54);
 }
 
 section nav {
-    width: 100%;
+    width: 980px;
     display: flex;
-    align-items: center;
     justify-content: space-around;
+    align-items: center;
+    margin: auto;
 }
 
 section a {
@@ -126,4 +138,60 @@ section a {
 
 footer {
     height: 20px;
+}
+
+@media screen and (max-width: 992px) {
+    body > header {
+        flex-direction: column;
+    }
+
+    h1 {
+        justify-content: center;
+        margin: 0 0;
+        padding: 0 0;
+    }
+
+    header > nav {
+        justify-content: center;
+        margin: 0 0;
+    }
+
+    header a {
+        margin: 10px 5px;
+    }
+
+    body > figure {
+        justify-content: center;
+    }
+    
+    h3 {
+        margin-right: 0px;
+    }
+
+    main {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    section {
+        flex-direction: column;
+    }
+    
+    h2 {
+        text-align: left;
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid;
+    }
+    
+    section nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: baseline;
+        margin-top: 10px;
+    }
+    
+    section a {
+        margin: 5px 0;
+    }
 }
